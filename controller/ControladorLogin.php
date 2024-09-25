@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows > 0) {
             // Usuario encontrado, iniciar sesión y redirigir
             $_SESSION['usuario'] = $identificacion; // Almacenar información en sesión
-            header("Location: ../archivo.html"); // Redirigir al HTML.  Usar Location para redirección HTTP
+            header("Location: ../views/perfil_paciente.php?id_paciente=" . $identificacion); // Redirigir a perfil_paciente.php pasando el número de identificación como parámetro
             exit(); // Asegurarse de que el script no siga ejecutándose
         } else {
             echo "Usuario no encontrado. Verifique los datos ingresados.";
